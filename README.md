@@ -1,8 +1,8 @@
 # 🧩 Praktikum 5 - JavaScript Dasar
 ### 👩‍💻 Mata Kuliah: Pemrograman Web  
-### 🧑‍🏫 Dosen Pengampu: (isi nama dosenmu)  
+### 🧑‍🏫 Dosen Pengampu: (Agung Nugroho, S.KOM., M.KOM)  
 ### 🙋‍♀️ Nama: (Nurul fadilah)  
-### 🗓️ Tanggal Praktikum: (isi tanggal)
+### 🗓️ Tanggal Praktikum: (21 Oktober 2025)
 
 ---
 
@@ -26,16 +26,325 @@
 ### 💻 Kode Program
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <title>Mengenal JavaScript</title>
+  <meta charset="UTF-8">
+  <title>Validasi Form</title>
+  <script>
+    function validateForm() {
+      // ambil nilai input
+      let nama = document.forms["formKu"]["nama"].value;
+      let email = document.forms["formKu"]["email"].value;
+      let password = document.forms["formKu"]["password"].value;
+
+      // validasi nama
+      if (nama == "") {
+        alert("Nama tidak boleh kosong!");
+        return false;
+      }
+
+      // validasi email
+      if (email == "") {
+        alert("Email tidak boleh kosong!");
+        return false;
+      } else if (!email.includes("@")) {
+        alert("Email harus mengandung '@'");
+        return false;
+      }
+
+      // validasi password
+      if (password.length < 6) {
+        alert("Password minimal 6 karakter!");
+        return false;
+      }
+
+      // jika semua valid, tampilkan pesan sukses
+      alert("Form berhasil divalidasi!");
+      return true;
+    }
+  </script>
 </head>
 <body>
-  <h1>Pengenalan JavaScript</h1>
-  <h3>Contoh document.write dan console.log</h3>
-  <script>
-    document.write("Hello World");
-    console.log("Hello World");
+  <h2>Form Validasi</h2>
+  <form name="formKu" onsubmit="return validateForm()">
+    <label>Nama:</label><br>
+    <input type="text" name="nama"><br><br>
+
+    <label>Email:</label><br>
+    <input type="text" name="email"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password"><br><br>
+
+    <input type="submit" value="Kirim">
+  </form>
+</body>
+</html>
+
+```
+
+## penjelasan
+
+Pada praktikum ini, kita belajar bagaimana cara memvalidasi form dengan JavaScript sebelum data dikirim ke server.
+Validasi dilakukan untuk mencegah kesalahan input, seperti kolom kosong, format email salah, atau password terlalu pendek.
+
+Dengan menerapkan validasi form:
+
+Pengguna akan mendapatkan peringatan langsung saat mengisi data yang salah.
+
+Aplikasi menjadi lebih aman dan profesional.
+
+Proses pengiriman data menjadi lebih akurat.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Mengenal JavaScript</title>
+</head>
+<body>
+<h1>Pengenalan JavaScript</h1>
+<h3>Contoh document.write dan console.log</h3>
+<script>
+document.write("Hello World");
+console.log("Hello World");
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>alert box</title>
+</head>
+<body>
+  <script language="javascript">
+    // menampilkan pesan alert di browser
+    window.alert("Ini merupakan pesan untuk anda");
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>skrip javascript</title>
+</head>
+<body>
+  Percobaan memakai JavaScript:<br>
+  <script language="javascript">
+    // menampilkan teks ke halaman web
+    document.write("Selamat mencoba JavaScript<br>");
+    document.write("Semoga sukses!");
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>pemasukan data</title>
+</head>
+<body>
+  <script language="javascript">
+    // menampilkan dialog prompt untuk meminta input nama
+    var nama = prompt("Siapa nama anda?", "Nurul fadilah");
+    // menampilkan sapaan di halaman web
+    document.write("Hai, " + nama);
+  </script>
+</body>
+</html>
+<html>
+<head>
+  <title>contoh program javascript</title>
+  <script language="javascript">
+    function pesan() {
+      document.write("Memanggil JavaScript lewat body onload");
+    }
+  </script>
+</head>
+
+<body onload="pesan()">
+</body>
+</html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Program JavaScript</title>
+    <script language="javascript">
+        function test(val1, val2) {
+            document.write("<br>Perkalian : " + (val1 * val2) + "<br>");
+            document.write("<br>Pembagian : " + (val1 / val2) + "<br>");
+            document.write("<br>Penjumlahan : " + (val1 + val2) + "<br>");
+            document.write("<br>Pengurangan : " + (val1 - val2) + "<br>");
+            document.write("<br>Modulus : " + (val1 % val2) + "<br>");
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="button1" value="Arithmetic" onclick="test(9,4)">
+</body>
+</html>
+<html>
+<head>
+  <title>contoh program javascript</title>
+  <script language="javascript">
+    function pesan() {
+      alert("memanggil javascript lewat body onload");
+    }
+  </script>
+</head>
+<body onload="pesan()">
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>contoh if-else</title>
+</head>
+<body>
+  <script language="javascript">
+    var nilai = prompt("Masukkan nilai (0–100):", 0);
+    var hasil = "";
+    if (nilai >= 60)
+      hasil = "Lulus";
+    else
+      hasil = "Tidak lulus";
+    document.write("Hasil: " + hasil);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>contoh program javascript</title>
+  <script language="javascript">
+    function test() {
+      var val1 = window.prompt("Input nilai (1–5):");
+      switch (val1) {
+        case "1":
+          document.write("Bilangan satu");
+          break;
+        case "2":
+          document.write("Bilangan dua");
+          break;
+        case "3":
+          document.write("Bilangan tiga");
+          break;
+        case "4":
+          document.write("Bilangan empat");
+          break;
+        case "5":
+          document.write("Bilangan lima");
+          break;
+        default:
+          document.write("Bilangan lainnya");
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="button" name="button1" value="Switch" onclick="test()">
+</body>
+</html>
+<html>
+<head>
+<script language="javascript">
+function test() {
+    var val1 = document.kirim.T1.value;
+    if (val1 % 2 == 0)
+        document.kirim.T2.value = "bilangan genap";
+    else
+        document.kirim.T2.value = "bilangan ganjil";
+}
+</script>
+</head>
+<body>
+<h3>Pembuatan Form</h3>
+<p>Form Input</p>
+
+<form method="POST" name="kirim">
+    <p>
+        BIL <input type="text" name="T1" size="20">
+        MERUPAKAN BIL <input type="text" name="T2" size="20">
+    </p>
+    <p>
+        <input type="button" value="TEBAK" name="B1" onclick="test()">
+    </p>
+</form>
+</body>
+</html>
+<html>
+<head>
+<title>Objek Document</title>
+<script language="javascript">
+function ubahWarnaLB(warna) {
+    document.bgColor = warna;
+}
+function ubahWarnaLD(warna) {
+    document.fgColor = warna;
+}
+</script>
+</head>
+<body>
+<h1>Form Button</h1>
+<form>
+    <input type="button" value="Latar Belakang Hijau" onclick="ubahWarnaLB('GREEN')">
+    <input type="button" value="Latar Belakang Putih" onclick="ubahWarnaLB('WHITE')">
+    <input type="button" value="Teks Kuning" onclick="ubahWarnaLD('YELLOW')">
+    <input type="button" value="Teks Biru" onclick="ubahWarnaLD('BLUE')">
+</form>
+
+<script language="javascript">
+document.write("Dimodifikasi terakhir pada " + document.lastModified);
+</script>
+</body>
+</html>
+<html>
+<head>
+<title>Daftar Menu</title>
+<script>
+function hitung(ele) {
+    var total = document.getElementById('total').value;
+    total = (total ? parseInt(total) : 0);
+    var harga = 0;
+
+    if (ele.checked) {
+        harga = ele.value;
+        total += parseInt(harga);
+    } else {
+        harga = ele.value;
+        if (total > 0)
+            total -= parseInt(harga);
+    }
+
+    document.getElementById('total').value = total;
+}
+</script>
+</head>
+<body>
+<h1>Daftar Menu Makanan</h1>
+
+<label><input type="checkbox" value="5000" id="menu1" onclick="hitung(this);"> Ayam Goreng Rp. 5.000</label><br>
+<label><input type="checkbox" value="500" id="menu2" onclick="hitung(this);"> Tempe Goreng Rp. 500</label><br>
+<label><input type="checkbox" value="2500" id="menu3" onclick="hitung(this);"> Telur Dadar Rp. 2.500</label><hr>
+
+<strong>Total Bayar: Rp. <input id="total" type="text"></strong>
+</body>
+</html>
+```
+
+## Penjelasan
+
+Dalam praktikum ini, kita telah belajar dasar-dasar JavaScript yang mencakup:
+
+Cara menampilkan output (alert, prompt, document.write).
+
+Penggunaan fungsi dan event seperti onload dan onclick.
+
+Penggunaan logika percabangan if-else dan switch.
+
+Operasi aritmatika dan manipulasi DOM.
+
+Interaksi antara HTML dan JavaScript untuk membuat web lebih interaktif.
+
+Dengan memahami dasar-dasar ini, kita bisa mengembangkan halaman web yang dinamis, interaktif, dan responsif terhadap input pengguna.
+
